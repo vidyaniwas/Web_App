@@ -1,0 +1,72 @@
+﻿
+@model PreviewDetails
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preview Details</title>
+</head>
+<body>
+    <h1>Student Details</h1>
+    <table border="1">
+        <tr>
+            <th>Student ID</th>
+            <td>@Model.Pk_StudentId</td>
+        </tr>
+        <tr>
+            <th>Student Full Name</th>
+            <td>@Model.StudentFullName</td>
+        </tr>
+        <tr>
+            <th>Father's Name</th>
+            <td>@Model.FatherName</td>
+        </tr>
+        <tr>
+            <th>Mother's Name</th>
+            <td>@Model.MotherName</td>
+        </tr>
+        <tr>
+            <th>Date of Birth</th>
+            <td>@Model.DateOfBirth.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <th>Email ID</th>
+            <td>@Model.EmailId</td>
+        </tr>
+        <tr>
+            <th>Contact No</th>
+            <td>@Model.ContactNo</td>
+        </tr>
+        <tr>
+            <th>Guardian Contact No</th>
+            <td>@Model.GuardianContactNo</td>
+        </tr>
+        <tr>
+            <th>Aadhar No</th>
+            <td>@Model.AadharNo</td>
+        </tr>
+    </table>
+
+    <h1>Subject Previews</h1>
+    @if (Model.subjectPreviews != null && Model.subjectPreviews.Any())
+    {
+        <table border="1">
+            <tr>
+                <th>Subject Name</th>
+                <th>Subject Code</th>
+            </tr>
+            @foreach (var subjectPreview in Model.subjectPreviews)
+            {
+                <tr>
+                    <td>@subjectPreview.SubjectName</td>
+                    <td>@subjectPreview.SubjectCode</td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p>No subject previews available.</p>
+    }
+</body>
+</html>

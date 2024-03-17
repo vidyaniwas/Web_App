@@ -1,0 +1,94 @@
+﻿@model AdminDashboard
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <form asp-action="AdminDashboard" asp-controller="User" method="post">
+        <div class="row">
+            <div class="form-group">
+                <label asp-for="FacultyName"></label>
+                <select asp-for="FacultyName" class="form-control">
+                    <option value="">Select Faculty</option>
+                    @if (ViewBag.FacultyList != null)
+                    {
+                        foreach (var item in (SelectList)ViewBag.FacultyList)
+                        {
+                            <option value="@item.Value">@item.Text</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div>
+                <div class="form-group">
+                <label for="paymentStatus">Payment Status:</label>
+                <select id="paymentStatus" name="paymentStatus">
+                    <option value="">Select Payment Status</option>
+                    <option value="1">Paid</option>
+                    <option value="2">Pending</option>
+                    <!-- Add options dynamically if needed -->
+                </select>
+            </div>
+            </div>
+            </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Reset</button>
+
+        <h1>Student List Dashboard</h1>
+        <hr />
+        @if (Model.studentLists != null && Model.studentLists.Count > 0)
+        {
+            <h2>Student List</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Pk_studentId</th>
+                        <th>Faculty Name</th>
+                        <th>Name</th>
+                        <th>Father's Name</th>
+                        <th>Mother's Name</th>
+                        <th>Date of Birth</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var student in Model.studentLists)
+                    {
+                        <tr>
+                            <td>@student.Pk_studentId</td>
+                            <td>@student.FacultyName</td>
+                            <td>@student.StudentName</td>
+                            <td>@student.Fathername</td>
+                            <td>@student.Mothername</td>
+                            <td>@student.DateOfBirth.ToShortDateString()</td>
+                            <td>
+                                <form asp-action="ViewStudentById"  asp-controller="User" method="post">
+                                    <input type="hidden" name="Pk_studentId" value="@student.Pk_studentId" />
+                                    <button type="submit">View</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div>No students available</div>
+        }
+
+
+
+
+
+
+
+
+
+    </form>
+</body>
+</html>
+

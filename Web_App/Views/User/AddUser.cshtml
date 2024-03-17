@@ -1,0 +1,90 @@
+﻿@model Web_App.Models.StudentDetails
+
+<form asp-action="Adduser" asp-controller="User" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="StudentName"></label>
+                <input asp-for="StudentName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="FatherName"></label>
+                <input asp-for="FatherName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="MotherName"></label>
+                <input asp-for="MotherName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfBirth"></label>
+                <input asp-for="DateOfBirth" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailId"></label>
+                <input asp-for="EmailId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactNo"></label>
+                <input asp-for="ContactNo" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="GuardianMobileNo"></label>
+                <input asp-for="GuardianMobileNo" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="GenderId"></label>
+                <select asp-for="GenderId" class="form-control">
+                    <option value="">Select Gender</option>
+                    @if (ViewBag.GenderList != null)
+                    {
+                        foreach (var item in (SelectList)ViewBag.GenderList)
+                        {
+                            <option value="@item.Value">@item.Text</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CasteCategoryId"></label>
+                <select asp-for="CasteCategoryId" class="form-control">
+                    <option value="">Select Caste Category</option>
+                    @if (ViewBag.CasteList != null)
+                    {
+                        foreach (var item in (SelectList)ViewBag.CasteList)
+                        {
+                            <option value="@item.Value">@item.Text</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AadharNo"></label>
+                <input asp-for="AadharNo" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="PermanentAddress"></label>
+                <input asp-for="PermanentAddress" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="PostalAddress"></label>
+                <input asp-for="PostalAddress" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Faculty"></label>
+                <select asp-for="Faculty" class="form-control">
+                    <option value="">Select Faculty</option>
+                    @if (ViewBag.FacultyList != null)
+                    {
+                        foreach (var item in (SelectList)ViewBag.FacultyList)
+                        {
+                            <option value="@item.Value">@item.Text</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
