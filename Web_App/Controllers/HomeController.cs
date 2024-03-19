@@ -18,8 +18,31 @@ namespace Web_App.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult Login( int Id)
         {
+            int id = Id;
+           
+
+            switch (id)
+            {
+                case 1:
+                    ViewBag.LoginTitle = "Admin";
+                    break;
+                case 2:
+                    ViewBag.LoginTitle = "Student";
+                    break;
+                case 3:
+                    ViewBag.LoginTitle = "Faculty";
+                    break;
+                
+                default:
+                    ViewBag.LoginTitle = null;
+                    break;
+            }
+
+           
+
+
 
             return View();
         }

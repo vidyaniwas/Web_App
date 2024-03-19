@@ -52,7 +52,6 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownAcademics">
-                                <a class="dropdown-item" href="@Url.Action("About", "Home")">About</a>
                                 <a class="dropdown-item" href="@Url.Action("Admission", "Academics")">Admission</a>
                                 <a class="dropdown-item" href="@Url.Action("AcademicRegulation", "Academics")">Academic Regulation</a>
                                 <a class="dropdown-item" href="@Url.Action("AcademicCalender", "Academics")">Academic Calendar</a>
@@ -142,9 +141,11 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownAcademics">
                                 <a class="dropdown-item" href="@Url.Action("RegisterUser","User")">Register</a>
-                                <a class="dropdown-item" href="@Url.Action("Admin","User")">Admin Panel</a>
-                                <a class="dropdown-item" href="@Url.Action("Student","User")">Student Panel</a>
-                                <a class="dropdown-item" href="@Url.Action("Faculty","User")">Faculty Panel</a>
+                                
+                                <a class="dropdown-item" href="@Url.Action("Login","Home", new { Id = 1 })">Admin Panel</a>
+
+                                <a class="dropdown-item" href="@Url.Action("Login","Home", new { Id = 2 })">Student Panel</a>
+                                <a class="dropdown-item" href="@Url.Action("Login","Home", new { Id = 3 })">Faculty Panel</a>
 
 
                             </div>
