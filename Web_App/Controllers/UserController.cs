@@ -27,7 +27,7 @@ namespace Web_App.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult RegisterUser(Register register)
+        public IActionResult RegisterUser(RegisterUser register)
         {
             if (ModelState.IsValid)
             {

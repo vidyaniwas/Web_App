@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Mvc.ModelBinding
 
-@model Register
+@model RegisterUser
 
 <!DOCTYPE html>
 <html>
@@ -8,33 +8,71 @@
     <title>Login Page</title>
 </head>
 <body>
-    <div>
-        <h2>Register User</h2>
-        <form method="post">
-            <div>
-                <label asp-for="Username"></label>
-                <input asp-for="Username" />
-                <span asp-validation-for="Username"></span>
+    <div class="container-xxl bg-white p-0">
+        <!-- Register Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="bg-light rounded">
+                    <div class="row g-0">
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="h-100 d-flex flex-column justify-content-center p-5">
+                                <h1 class="mb-4">Register User</h1>
+                                <form method="post">
+                                    <div class="row g-3">
+                                        <div class="col-sm-12">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control border-0" id="UserName" name="UserName" asp-for="Username" required placeholder="User Name">
+                                                <label for="Username">User Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-floating">
+                                                <input type="number" class="form-control border-0" id="Mobile" name="Mobile" asp-for="Mobile"  required placeholder="Mobile Number">
+                                                <label for="Email">Mobile Number</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control border-0" id="Email" name="Email" asp-for="Email" required placeholder="Email Id">
+                                                <label for="Email">Email Id</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-floating">
+                                                <input type="password" class="form-control border-0" id="Password" name="Password" asp-for="Password" required placeholder="Password">
+                                                <label for="Password">Password</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-floating">
+                                                <input type="ConfirmPassword" class="form-control border-0" id="ConfirmPassword" name="ConfirmPassword" asp-for="ConfirmPassword" required placeholder="Confirm Password Id">
+                                                <label for="ConfirmPassword">Confirm Password</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                            <div class="position-relative h-100">
+                                <video class="position-absolute w-100 h-100 rounded" autoplay loop muted playsinline>
+                                    <source src="~/img/appointment.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
-            <div>
-                <label asp-for="Email"></label>
-                <input asp-for="Email" />
-                <span asp-validation-for="Email"></span>
-            </div>
-            <div>
-                <label asp-for="Password"></label>
-                <input asp-for="Password" type="password" />
-                <span asp-validation-for="Password"></span>
-            </div>
-            <div>
-                <label asp-for="ConfirmPassword"></label>
-                <input asp-for="ConfirmPassword" type="password" />
-                <span asp-validation-for="ConfirmPassword"></span>
-            </div>
-            <!-- Other fields and validation messages -->
-            <button type="submit">Register</button>
-        </form>
         </div>
+        <!-- Register End -->
+    </div>
 </body>
 </html>
 
