@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>@ViewData["Title"] - Web_App</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -35,28 +36,17 @@
             <a href="@Url.Action("Index", "Home")" class="navbar-brand">
                 <h1 class="m-0 text-primary"><i class="fa fa-school me-3"></i>Skyline Intermediate College</h1>
             </a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapseHome">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="collapse navbar-collapse" id="navbarCollapseHome">
                 <div class="navbar-nav mx-auto">
                     <a href="@Url.Action("Index", "Home")" class="nav-item nav-link active">Home</a>
                     <a href="@Url.Action("About", "Home")l" class="nav-item nav-link">About Us</a>
                     <a href="@Url.Action("RegisterUser", "User")" class="nav-item nav-link">Register</a>
-                    @*   <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                            <a href="facility.html" class="dropdown-item">School Facilities</a>
-                            <a href="team.html" class="dropdown-item">Popular Teachers</a>
-                            <a href="call-to-action.html" class="dropdown-item">Become A Teachers</a>
-                            <a href="appointment.html" class="dropdown-item">Make Appointment</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
-                        </div>
-                    </div> *@
                     <a href="@Url.Action("Contact", "Home")" class="nav-item nav-link">Contact Us</a>
                 </div>
-                <a href="@Url.Action("Login","Home", new { Id = 1 })" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="@Url.Action("Login","Home", new { Id = 2 })" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
